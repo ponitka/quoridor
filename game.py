@@ -11,6 +11,7 @@ class GameWindow(Gtk.Window):
   def __init__(self, players):
     Gtk.Window.__init__(self, title="Quoridor")
     self.set_border_width(20)
+    self.set_resizable(False)
 
     self.sidebar1 = Sidebar(players[0])
     self.sidebar2 = Sidebar(players[1])

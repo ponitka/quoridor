@@ -48,7 +48,7 @@ class Sidebar(Gtk.Box):
         self.label_color.override_background_color(0, rgba) 
 
     for i in range(10):
-      self.array[i].set_property("width-request", 1)
+      self.array[i].set_property("width-request", 3)
       self.array[i].set_property("height-request", 30)
       
       coolor = Gdk.color_parse("white")
