@@ -16,6 +16,8 @@ class Cell(Gtk.Box):
     
     self.label = Gtk.Label("")
     self.button = Gtk.Button()
+    self.label2 = Gtk.Label("")
+    self.button.add(self.label2)
     self.overlay = Gtk.Overlay()
     
     self.add(self.overlay)
@@ -30,6 +32,7 @@ class Cell(Gtk.Box):
     coolor = Gdk.color_parse(color)
     rgba = Gdk.RGBA.from_color(coolor)
     self.label.override_background_color(0, rgba)   
+    self.label2.override_background_color(0, rgba)
 
   def clicked(self, abc):
     self.board.Clicked(self.i, self.j)
