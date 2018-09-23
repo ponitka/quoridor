@@ -74,9 +74,9 @@ class Board(Gtk.Box):
     if i % 2 == 1 and j % 2 == 1:
       return False
     if i % 2 == 0 and j % 2 == 0:
-      MakeMove_Pawn(self, self.players[0], i, j)
+      MakeMove_Pawn(self, self.players[0], i, j, False)
       return
-    MakeMove_Wall(self, self.players[0], i, j)
+    MakeMove_Wall(self, self.players[0], i, j, False)
 
   visited = -1
   def DfsFindPath(self, player, i, j):
