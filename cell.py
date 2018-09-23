@@ -46,6 +46,8 @@ class Cell(Gtk.Box):
 
   def mouse(self, widget, ok):
     player = self.board.players[0]
+    if player.bot == True:
+      return
     if self.TYPE == "PAWN":
       if MakeMove_Pawn(self.board, player, self.i, self.j, True):
         if ok == True:
