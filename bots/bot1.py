@@ -14,8 +14,8 @@ from make_moves import MakeMove_Wall, MakeMove_Pawn
 ##    name your script bot1.py / bot2.py accordingly
 
 ##  Functions:
-##    MakeMove_Wall(self.board, self, i, j) --> True / False
-##    MakeMove_Pawn(self.board, self, i, j) --> True / False
+##    MakeMove_Wall(self.board, self, i, j) --> True / False (check - wheter NOT to apply move to a board)
+##    MakeMove_Pawn(self.board, self, i, j) --> True / False (check - wheter NOT to apply move to a board)
 ##    self.board.GetCell(i, j) --> [type, active]
 ##      type: PAWN, WALL, FILL
 ##    self.board.inside(i, j) --> True / False
@@ -169,6 +169,6 @@ class Bot1(Player):
     random.shuffle(solutions)
 
     if solutions[0][1] == 0:
-      MakeMove_Pawn(self.board, self, my_pos[0] + solutions[0][2], my_pos[1] + solutions[0][3])
+      MakeMove_Pawn(self.board, self, my_pos[0] + solutions[0][2], my_pos[1] + solutions[0][3], False)
     else:
-      MakeMove_Wall(self.board, self, solutions[0][2], solutions[0][3])
+      MakeMove_Wall(self.board, self, solutions[0][2], solutions[0][3], False)

@@ -14,8 +14,8 @@ from make_moves import MakeMove_Wall, MakeMove_Pawn
 ##    name your script bot1.py / bot2.py accordingly
 
 ##  Functions:
-##    MakeMove_Wall(self.board, self, i, j) --> True / False
-##    MakeMove_Pawn(self.board, self, i, j) --> True / False
+##    MakeMove_Wall(self.board, self, i, j, check) --> True / False (check - wheter NOT to apply move to a board)
+##    MakeMove_Pawn(self.board, self, i, j, check) --> True / False (check - wheter NOT to apply move to a board)
 ##    self.board.GetCell(i, j) --> [type, active]
 ##      type: PAWN, WALL, FILL
 ##    self.board.inside(i, j) --> True / False
@@ -38,9 +38,9 @@ class Bot1(Player):
 
     for i in range(self.N):
       for j in range(self.N):
-        if MakeMove_Pawn(self.board, self, i, j):
+        if MakeMove_Pawn(self.board, self, i, j, False):
           return
     for i in range(self.N):
       for j in range(self.N):
-        if MakeMove_Wall(self.board, self, i, j):
+        if MakeMove_Wall(self.board, self, i, j, False):
           return
