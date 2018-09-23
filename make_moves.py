@@ -4,9 +4,7 @@ from gi.repository import Gtk
 
 from cell import *
 
-def MakeMove_Pawn(self, player, i, j):
-  #print("> MakeMove_Pawn %s %d %d" % (player.name, i, j))
- 
+def MakeMove_Pawn(self, player, i, j, check):
   if player != self.players[0] or not self.inside(i, j):
     return False
   if not self.array[i][j].TYPE == "PAWN":
@@ -32,6 +30,9 @@ def MakeMove_Pawn(self, player, i, j):
       if self.array[ii][jj].get_property("active") == False:
         return False
 
+  if check == True:
+    return True
+
   self.moves.append([0, player, player.pos_i, player.pos_j, i, j, False])
 
   self.array[player.pos_i][player.pos_j].Occupant = -1
@@ -54,7 +55,7 @@ def MakeMove_Pawn(self, player, i, j):
 
   return True
 
-def MakeMove_Wall(self, player, i, j):
+def MakeMove_Wall(self, player, i, j, check):
   #print("> MakeMove_Wall %s %d %d" % (player.name, i, j))
   
   if player != self.players[0] or player.walls == 0 or not self.inside(i, j):
@@ -74,6 +75,9 @@ def MakeMove_Wall(self, player, i, j):
       return False
     if self.array[i + r*d[0]][j + r*d[1]].get_property("active") == True:
       return False
+
+  if check == True:
+    return True
 
   self.moves.append([1, player, player.pos_i, player.pos_j, i, j, d])
 
