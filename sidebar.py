@@ -27,6 +27,9 @@ class Sidebar(Gtk.Box):
     self.pack_start(Gtk.Label("Walls: "), True, True, 0)
     self.pack_start(self.box, True, True, 0)
 
+    self.label_color.set_property("width-request", 50)
+    self.label_name.set_property("width-request", 50)
+
   def update(self):
     if self.player.game_is_running == True:
       if self.player.my_turn == True:
