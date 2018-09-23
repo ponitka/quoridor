@@ -14,3 +14,7 @@ Game rules and controls:
 </ul>
 
 To start the game run <code>main.py</code> in Python 3 (<code>$ python3 main.py</code>)
+
+To install GTK+ on Ubuntu execute: <br />
+<code>$ sudo apt install python-gi python-gi-cairo python3-gi python3-gi-cairo gir1.2-gtk-3.0</code>. <br />
+For other platforms follow the instructions from https://pygobject.readthedocs.io/en/latest/getting_started.html.
